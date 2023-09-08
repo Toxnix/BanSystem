@@ -37,6 +37,13 @@ Permission | Description
 - Java 17 or higher
 - MySQL Database
 
+## Installation
+1. Move the plugin to the plugins folder of your BungeeCord server.
+2. Restart BungeeCord.
+3. Configure MySQL settings in the `mysql.yml` configuration file.
+4. Optionally, customize individual messages in the `messages.yml` configuration file.
+5. If needed, adjust the ban duration settings for different groups in the `settings.yml`.
+
 ## Coming Soon
 - Mute system
 
