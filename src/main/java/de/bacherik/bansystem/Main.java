@@ -56,7 +56,7 @@ public final class Main extends Plugin {
         pluginManager.registerCommand(this, new BanInfo("baninfo", "bansystem.baninfo"));
         pluginManager.registerCommand(this, new ClearBans("clearbans", "bansystem.clearbans", "clearban"));
         pluginManager.registerCommand(this, new BanTemplate("bantemplate", "bansystem.bantemplate"));
-        pluginManager.registerCommand(this, new BanReload("banreload", "bansystem.banreload", "breload", "banr", "reloadban", "rban"));
+        pluginManager.registerCommand(this, new BanReload("banreload", "bansystem.reload", "breload", "banr", "reloadban", "rban"));
 
         // Register listeners
         pluginManager.registerListener(this, new PreLogin());
