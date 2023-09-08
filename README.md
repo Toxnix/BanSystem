@@ -1,6 +1,17 @@
 # BanSystem
 This plugin allows you to ban players. I am currently actively developing the plugin and have many ideas and features in progress.
 
+## Why Choose BanSystem?
+
+BanSystem offers several compelling reasons to use it on your BungeeCord server:
+
+1. **Efficient Player Management:** Ban and unban players effortlessly, access comprehensive ban histories, and enforce server rules effectively.
+2. **Simplified Ban Templates:** Use predefined templates for common scenarios or customize them to fit your server's needs, ensuring consistent rule enforcement.
+3. **Flexible Control:** Assign permissions, fine-tune ban durations, and manage player groups with ease, giving you full control over server discipline.
+4. **Easy Configuration:** Quick installation, message customization, and adjustable ban durations make setup a breeze.
+5. **Active Development:** Expect ongoing updates and future features like a mute system to keep your server up-to-date and secure.
+
+
 ## Commands
 Command | Description
 ------- | -----------
