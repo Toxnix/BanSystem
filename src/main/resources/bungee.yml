@@ -1,0 +1,6 @@
+name: BanSystem
+version: '${project.version}'
+main: de.bacherik.bansystem.Main
+author: BachErik
+description: This plugin allows you to better automate moderation.
+website: https://modrinth.com/plugin/ai-ban-and-mute-system
