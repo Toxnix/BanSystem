@@ -31,6 +31,7 @@ public class MessagesEnglishConfig extends MessagesConfig {
                 "&7Player &c%PLAYER% &7was banned by &c%BANNED_BY%\n" +
                         "&7Reason: &c%REASON%\n" +
                         "&7Time: &c%TIME%");
+        messages.put("bansystem.ban.nopermission", "&cYou do not have permission to ban the player for the specified time!");
         messages.put("bansystem.unban.syntax", "&cSyntax: /unban <Player> [<Reason>]");
         messages.put("bansystem.unban.notbanned", "&cPlayer &e%PLAYER% &cis not banned.");
         messages.put("bansystem.unban.successful", "&7Player &e%PLAYER% &7was unbanned by &e%UNBANNED_BY%" +

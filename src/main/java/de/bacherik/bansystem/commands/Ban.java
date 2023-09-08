@@ -110,11 +110,10 @@ public class Ban extends Command {
                 if (!sender.hasPermission("bansystem.ban.permanent")) {
                     long duration = Duration.between(LocalDateTime.now(), end).getSeconds();
                     if (!Main.getInstance().getSettingsConfig().canBan(sender, duration)) {
-                        sender.sendMessage(new TextComponent(config.get("mutesystem.mute.nopermission", true)));
+                        sender.sendMessage(new TextComponent(config.get("bansystem.ban.nopermission", true)));
                         return;
                     }
                 }
-
 
                 //ban
                 if (sender instanceof ProxiedPlayer) {
@@ -149,6 +148,5 @@ public class Ban extends Command {
                     .replaceAll("%BANNED_BY%", bannedByName)
                     .replaceAll("%REMAINING_TIME%", TimeHelper.getDifference(start, end))));
         }
-
     }
 }

@@ -35,6 +35,7 @@ public class MessagesGermanConfig extends MessagesConfig {
         messages.put("bansystem.unban.notbanned", "&cSpieler &e%PLAYER% &cist nicht gebannt.");
         messages.put("bansystem.unban.successful", "&7Spieler &e%PLAYER% &7wurde von &e%UNBANNED_BY% &7entbannt" +
                 "\n&7Grund: &e%REASON%");
+        messages.put("bansystem.ban.nopermission", "&cDu hast nicht die Berechtigung, um den Spieler für die angegebene Zeit zu bannen!");
         messages.put("bansystem.baninfo.syntax", "&cSyntax: /baninfo <Spieler>");
         messages.put("bansystem.baninfo.nocurrentban", "&cSpieler %PLAYER% ist aktuell nicht gebannt.");
 
