@@ -11,7 +11,7 @@ BanSystem offers several compelling reasons to use it on your BungeeCord server:
    server's needs, ensuring consistent rule enforcement.
 3. **Flexible Control:** Assign permissions, fine-tune ban and mute durations, and manage player groups with ease,
    giving you full control over server discipline.
-4. **Easy Configuration:** Quick installation, message customization, and adjustable ban durations make setup a breeze.
+4. **Easy Configuration:** Quick installation, message customization, and adjustable ban durations make set up a breeze.
 
 
 ## Commands
@@ -73,13 +73,11 @@ BanSystem offers several compelling reasons to use it on your BungeeCord server:
 - MySQL Database
 
 ## Installation
-1. Move the plugin to the plugins folder of your BungeeCord server.
+1. Move the plugin to the plugin's folder of your BungeeCord server.
 2. Restart BungeeCord.
 3. Configure MySQL settings in the `mysql.yml` configuration file.
 4. Optionally, customize individual messages in the `messages.yml` configuration file.
 5. If needed, adjust the ban duration settings for different groups in the `settings.yml`.
-
-## Coming Soon
 
 ## In Planning
 - AI for the mute system
