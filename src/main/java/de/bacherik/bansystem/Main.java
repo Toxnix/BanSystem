@@ -3,6 +3,7 @@ package de.bacherik.bansystem;
 import de.bacherik.bansystem.commands.*;
 import de.bacherik.bansystem.config.*;
 import de.bacherik.bansystem.listeners.PreLogin;
+import de.bacherik.bansystem.listeners.PreSendMessage;
 import de.bacherik.bansystem.utils.MySQL;
 import de.bacherik.bansystem.utils.TimeHelper;
 import de.bacherik.bansystem.utils.Util;
@@ -56,10 +57,16 @@ public final class Main extends Plugin {
         pluginManager.registerCommand(this, new BanInfo("baninfo", "bansystem.baninfo"));
         pluginManager.registerCommand(this, new ClearBans("clearbans", "bansystem.clearbans", "clearban"));
         pluginManager.registerCommand(this, new BanTemplate("bantemplate", "bansystem.bantemplate"));
-        pluginManager.registerCommand(this, new BanReload("banreload", "bansystem.reload", "breload", "banr", "reloadban", "rban"));
+        pluginManager.registerCommand(this, new BanReload("banreload", "bansystem.reload", "breload", "banr", "reloadban", "rban", "mrealod", "mreload", "realodmute", "rmute"));
+        pluginManager.registerCommand(this, new Mute("mute", "bansystem.mute", "tempmute"));
+        pluginManager.registerCommand(this, new MuteInfo("muteinfo", "bansystem.muteinfo"));
+        pluginManager.registerCommand(this, new MuteTemplate("mutetemplate", "bansystem.mutetemplate"));
+        pluginManager.registerCommand(this, new UnMute("unmute", "bansystem.unmute"));
+        pluginManager.registerCommand(this, new ClearMutes("clearmutes", "bansystem.clearmutes", "clearmute"));
 
         // Register listeners
         pluginManager.registerListener(this, new PreLogin());
+        pluginManager.registerListener(this, new PreSendMessage());
 
         System.out.println(ChatColor.GREEN + PREFIX + "Plugin enabled");
         instance = this;

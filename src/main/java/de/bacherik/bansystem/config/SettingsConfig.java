@@ -6,7 +6,8 @@ import java.util.HashMap;
 
 public class SettingsConfig extends Config {
 
-    private final HashMap<String, Integer> permissions;
+    private final HashMap<String, Integer> banPermissions;
+    private final HashMap<String, Integer> mutePermissions;
     private String language;
 
     public SettingsConfig(String name, String path) {
@@ -14,13 +15,21 @@ public class SettingsConfig extends Config {
 
         language = (String) getPathOrSet("bansystem.language", "english", false);
 
-        permissions = new HashMap<>();
-        permissions.put("bansystem.ban.supporter", 24 * 60 * 60);
-        permissions.put("bansystem.ban.srsupporter", 7 * 24 * 60 * 60);
-        permissions.put("bansystem.ban.moderator", 30 * 24 * 60 * 60);
-        permissions.put("bansystem.ban.srmoderator", 365 * 24 * 60 * 60);
-        permissions.forEach((permission, defaultValue) ->
-                permissions.put(permission, (int) getPathOrSet(permission, defaultValue)));
+        banPermissions = new HashMap<>();
+        banPermissions.put("bansystem.ban.supporter", 24 * 60 * 60);
+        banPermissions.put("bansystem.ban.srsupporter", 7 * 24 * 60 * 60);
+        banPermissions.put("bansystem.ban.moderator", 30 * 24 * 60 * 60);
+        banPermissions.put("bansystem.ban.srmoderator", 365 * 24 * 60 * 60);
+        banPermissions.forEach((permission, defaultValue) ->
+                banPermissions.put(permission, (int) getPathOrSet(permission, defaultValue)));
+
+        mutePermissions = new HashMap<>();
+        mutePermissions.put("bansystem.mute.supporter", 12 * 60 * 60);
+        mutePermissions.put("bansystem.mute.srsupporter", 3 * 24 * 60 * 60);
+        mutePermissions.put("bansystem.mute.moderator", 15 * 24 * 60 * 60);
+        mutePermissions.put("bansystem.mute.srmoderator", 180 * 24 * 60 * 60);
+        mutePermissions.forEach((permission, defaultValue) ->
+                mutePermissions.put(permission, (int) getPathOrSet(permission, defaultValue)));
     }
 
     public String getLanguage() {
@@ -28,8 +37,13 @@ public class SettingsConfig extends Config {
     }
 
     public boolean canBan(CommandSender sender, long banDuration) {
-        return permissions.entrySet().stream()
+        return banPermissions.entrySet().stream()
                 .anyMatch(entry -> sender.hasPermission(entry.getKey()) && banDuration <= entry.getValue());
+    }
+
+    public boolean canMute(CommandSender sender, long muteDuration) {
+        return mutePermissions.entrySet().stream()
+                .anyMatch(entry -> sender.hasPermission(entry.getKey()) && muteDuration <= entry.getValue());
     }
 
     public void reload() {
