@@ -5,14 +5,10 @@ This plugin allows you to ban players. I am currently actively developing the pl
 
 BanSystem offers several compelling reasons to use it on your BungeeCord server:
 
-1. **Efficient Player Management:** Ban, unban, mute, and unmute players effortlessly, access comprehensive ban and mute
-   histories, and enforce server rules effectively.
-2. **Simplified Ban and Mute Templates:** Use predefined templates for common scenarios or customize them to fit your
-   server's needs, ensuring consistent rule enforcement.
-3. **Flexible Control:** Assign permissions, fine-tune ban and mute durations, and manage player groups with ease,
-   giving you full control over server discipline.
-4. **Easy Configuration:** Quick installation, message customization, and adjustable ban durations make set up a breeze.
-
+1. **Efficient Player Management:** Effortlessly ban, unban, mute, and unmute players. Access comprehensive ban and mute histories to enforce server rules effectively.
+2. **Simplified Ban and Mute Templates:** Use predefined templates for common scenarios or customize them to fit your server's needs, ensuring consistent rule enforcement.
+3. **Flexible Control:** Assign permissions, fine-tune ban and mute durations, and manage player groups with ease, giving you full control over server discipline.
+4. **Easy Configuration:** Quick installation, message customization, and adjustable ban durations make setup a breeze.
 
 ## Commands
 
@@ -33,9 +29,9 @@ BanSystem offers several compelling reasons to use it on your BungeeCord server:
 | `/bantemplate edit <time> <reason>`  | Edit a ban template                 |
 | `/bantemplate remove <id>`           | Remove a ban template               |
 | `/mutetemplate list`                 | List ban templates                  |
-| `/mutetemplate add <time> <reason>`  | Add a ban template                  |
-| `/mutetemplate edit <time> <reason>` | Edit a ban template                 |
-| `/mutetemplate remove <id>`          | Remove a ban template               |
+| `/mutetemplate add <time> <reason>`  | Add a mute template                 |
+| `/mutetemplate edit <time> <reason>` | Edit a mute template                |
+| `/mutetemplate remove <id>`          | Remove a mute template              |
 | `/banreload`                         | Reload messages from configs        |
 
 ## Permissions
@@ -47,7 +43,7 @@ BanSystem offers several compelling reasons to use it on your BungeeCord server:
 | `bansystem.ban.<group>`    | Maximum ban duration can be configured in `settings.yml` |
 | `bansystem.mute`           | Permission for the `/mute` command                       |
 | `bansystem.mute.permanent` | Permission to use `/mute` with permanent mutes           |
-| `bansystem.mute.<group>`   | Maximum ban duration can be configured in `settings.yml` |
+| `bansystem.mute.<group>`   | Maximum mute duration can be configured in `settings.yml`|
 | `bansystem.unban`          | Permission for the `/unban` command                      |
 | `bansystem.unmute`         | Permission for the `/unmute` command                     |
 | `bansystem.baninfo`        | Permission for the `/baninfo` command                    |
@@ -79,5 +75,14 @@ BanSystem offers several compelling reasons to use it on your BungeeCord server:
 4. Optionally, customize individual messages in the `messages.yml` configuration file.
 5. If needed, adjust the ban duration settings for different groups in the `settings.yml`.
 
+## Coming Soon
+- A warn System
+- If you are muted, commands that you don't able to use
+- General history command to show all mutes, bans, and warns
+- Ban, mute, and warn bypass
+- Add H2 and MongoDB Database support
+
 ## In Planning
+- Spigot support
+- Webpanel
 - AI for the mute system
