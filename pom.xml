@@ -11,7 +11,7 @@
 
     <name>BanSystem</name>
 
-    <description>https://modrinth.com/plugin/ban-system</description>
+    <description>https://modrinth.com/plugin/bansystem</description>
     <properties>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
