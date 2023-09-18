@@ -23,9 +23,12 @@ public class PreSendMessage implements Listener {
             String message = event.getMessage();
 
             MuteRecord record = Main.getInstance().getSql().getMute(player.getUniqueId().toString());
+
             if (record == null) return;
 
             event.setCancelled(true);
+            event.setMessage(null);
+
             player.sendMessage(new TextComponent(Main.getInstance().getMessagesConfig().get("bansystem.mutemessage")
                     .replaceAll("%REASON%", record.getReason())
                     .replaceAll("%REMAINING_TIME%", record.getRemaining())));
