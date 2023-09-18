@@ -76,13 +76,13 @@ BanSystem offers several compelling reasons to use it on your BungeeCord server:
 5. If needed, adjust the ban duration settings for different groups in the `settings.yml`.
 
 ## Coming Soon
-- A warn System
-- If you are muted, commands that you don't able to use
-- General history command to show all mutes, bans, and warns
+- Spigot support
 - Ban, mute, and warn bypass
 - Add H2 and MongoDB Database support
+- If you are muted, commands that you don't able to use
+- General history command to show all mutes, bans, and warns
+- A warn System
 
 ## In Planning
-- Spigot support
 - Webpanel
 - AI for the mute system
