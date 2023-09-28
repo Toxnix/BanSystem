@@ -1,0 +1,59 @@
+name: BanSystem
+version: '${project.version}'
+main: de.bacherik.bansystem.platform.spigot.Main
+author: BachErik
+description: This plugin allows you to better automate moderation.
+website: https://modrinth.com/plugin/bansystem
+
+api-version: '1.20'
+
+commands:
+  ban:
+    permission: bansystem.ban
+    aliases: b, ban, tempban
+    usage: /ban <player> <reason>
+    description: Temporarily ban a player
+  unban:
+    permission: bansystem.unban
+    usage: /unban <player>
+    description: Unban a player
+  baninfo:
+    permission: bansystem.baninfo
+    usage: /baninfo <player>
+    description: Get information about a player
+  clearbans:
+    permission: bansystem.clearbans
+    usage: /clearbans
+    aliases: clearban
+    description: Clear all bans
+  bantemplate:
+    permission: bansystem.bantemplate
+    aliases: bt
+    usage: /bantemplate <player> <reason>
+    description: Temporarily ban a player with a template
+  banreload:
+    permission: bansystem.reload
+    aliases: br, breloadban, rban, banr, reloadban, mrealod, mreload, realodmute, rmute
+  mute:
+    permission: bansystem.mute
+    aliases: mute, m, tempmute
+    usage: /mute <player> <reason>
+    description: Mute a player
+  unmute:
+    permission: bansystem.unmute
+    usage: /unmute <player>
+    description: Unmute a player
+  muteinfo:
+    permission: bansystem.muteinfo
+    usage: /muteinfo <player>
+    description: Get information about a player
+  mutetemplate:
+    permission: bansystem.mutetemplate
+    aliases: mt
+    usage: /mutetemplate <player> <reason>
+    description: Mute a player with a template
+  clearmutes:
+    permission: bansystem.clearmutes
+    usage: /clearmutes
+    aliases: clearmute
+    description: Clear all mutes

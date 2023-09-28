@@ -1,6 +1,6 @@
 name: BanSystem
 version: '${project.version}'
-main: de.bacherik.bansystem.Main
+main: de.bacherik.bansystem.platform.bungee.Main
 author: BachErik
 description: This plugin allows you to better automate moderation.
 website: https://modrinth.com/plugin/bansystem

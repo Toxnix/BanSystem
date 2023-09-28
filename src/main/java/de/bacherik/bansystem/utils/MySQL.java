@@ -4,6 +4,7 @@ import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import net.md_5.bungee.api.ProxyServer;
 import net.md_5.bungee.api.chat.TextComponent;
+import org.bukkit.Bukkit;
 
 import java.sql.*;
 import java.time.LocalDateTime;
@@ -15,7 +16,7 @@ public class MySQL {
 
     private final HikariDataSource dataSource;
 
-    public MySQL(String host, int port, String username, String password, String database) {
+    public MySQL(String host, int port, String username, String password, String database, ServerSoftware serversoftware) {
         HikariConfig config = new HikariConfig();
         config.setJdbcUrl("jdbc:mysql://" + host + ":" + port + "/" + database + "?autoReconnect=true");
         config.setUsername(username);
@@ -119,8 +120,11 @@ public class MySQL {
 
             stmt.close();
         } catch (SQLException e) {
-            ProxyServer.getInstance().getConsole().sendMessage(new TextComponent("§c[BanSystem] MySQL Connection could not be established. Error:"));
-            e.printStackTrace();
+            if (serversoftware.equals(ServerSoftware.BUNGEECORD)) {
+                ProxyServer.getInstance().getConsole().sendMessage(new TextComponent("§c[BanSystem] MySQL Connection could not be established. Error:"));
+            } else if (serversoftware.equals(ServerSoftware.SPIGOT)) {
+                Bukkit.getConsoleSender().sendMessage("§c[BanSystem] MySQL Connection could not be established. Error:");
+            }
         }
     }
 

@@ -1,6 +1,6 @@
 package de.bacherik.bansystem.utils;
 
-import de.bacherik.bansystem.Main;
+import de.bacherik.bansystem.platform.bungee.Main;
 
 import java.time.Duration;
 import java.time.LocalDateTime;

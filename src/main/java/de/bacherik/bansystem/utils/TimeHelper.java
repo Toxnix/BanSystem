@@ -1,7 +1,7 @@
 package de.bacherik.bansystem.utils;
 
-import de.bacherik.bansystem.Main;
-import de.bacherik.bansystem.config.MessagesConfig;
+import de.bacherik.bansystem.platform.bungee.Main;
+import de.bacherik.bansystem.utils.config.MessagesConfig;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
