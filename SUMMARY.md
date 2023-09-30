@@ -2,6 +2,6 @@
 
 * [BanSystem](README.md)
 
-## Group 1
+## How to Update
 
-* [v0.1.0 to master](group-1/v0.1.0-to-master.md)
+* [v0.1.0 to master](how-to-update/v0.1.0-to-master.md)
