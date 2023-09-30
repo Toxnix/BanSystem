@@ -22,6 +22,9 @@ public class PreSendMessage implements Listener {
             ProxiedPlayer player = (ProxiedPlayer) event.getSender();
             String message = event.getMessage();
 
+            if (player.hasPermission("bansystem.mute.bypass")) {
+                return;
+            }
             MuteRecord record = Main.getInstance().getSql().getMute(player.getUniqueId().toString());
             if (record == null) return;
 

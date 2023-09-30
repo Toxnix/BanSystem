@@ -36,22 +36,23 @@ BanSystem offers several compelling reasons to use it on your BungeeCord server:
 
 ## Permissions
 
-| Permission                 | Description                                              |
-|----------------------------|----------------------------------------------------------|
-| `bansystem.ban`            | Permission for the `/ban` command                        |
-| `bansystem.ban.permanent`  | Permission to use `/ban` with permanent bans             |
-| `bansystem.ban.<group>`    | Maximum ban duration can be configured in `settings.yml` |
-| `bansystem.mute`           | Permission for the `/mute` command                       |
-| `bansystem.mute.permanent` | Permission to use `/mute` with permanent mutes           |
-| `bansystem.mute.<group>`   | Maximum mute duration can be configured in `settings.yml`|
-| `bansystem.unban`          | Permission for the `/unban` command                      |
-| `bansystem.unmute`         | Permission for the `/unmute` command                     |
-| `bansystem.baninfo`        | Permission for the `/baninfo` command                    |
-| `bansystem.muteinfo`       | Permission for the `/muteinfo` command                   |
-| `bansystem.bantemplate`    | Permission for the `/bantemplate` command                |
-| `bansystem.mutetemplate`   | Permission for the `/mutetemplate` command               |
-| `bansystem.reload`         | Permission for the `/banreload` command                  |
-
+| Permission                 | Description                                               |
+|----------------------------|-----------------------------------------------------------|
+| `bansystem.ban`            | Permission for the `/ban` command                         |
+| `bansystem.ban.permanent`  | Permission to use `/ban` with permanent bans              |
+| `bansystem.ban.<group>`    | Maximum ban duration can be configured in `settings.yml`  |
+| `bansystem.mute`           | Permission for the `/mute` command                        |
+| `bansystem.mute.permanent` | Permission to use `/mute` with permanent mutes            |
+| `bansystem.mute.<group>`   | Maximum mute duration can be configured in `settings.yml` |
+| `bansystem.unban`          | Permission for the `/unban` command                       |
+| `bansystem.unmute`         | Permission for the `/unmute` command                      |
+| `bansystem.baninfo`        | Permission for the `/baninfo` command                     |
+| `bansystem.muteinfo`       | Permission for the `/muteinfo` command                    |
+| `bansystem.bantemplate`    | Permission for the `/bantemplate` command                 |
+| `bansystem.mutetemplate`   | Permission for the `/mutetemplate` command                |
+| `bansystem.reload`         | Permission for the `/banreload` command                   |
+| `bansystem.ban.bypass`     | Permission to bypass to be banned                         |
+| `bansystem.mute.bypass`    | Permission to bypass to be muted                          |
 ## Functions
 - Ban players
 - Unban players
@@ -74,6 +75,9 @@ BanSystem offers several compelling reasons to use it on your BungeeCord server:
 3. Configure MySQL settings in the `mysql.yml` configuration file.
 4. Optionally, customize individual messages in the `messages.yml` configuration file.
 5. If needed, adjust the ban duration settings for different groups in the `settings.yml`.
+
+## How to Update
+- [v0.1.0](https://github.com/BachErik-Team/BanSystem/releases/tag/v0.1.0) to [master](https://github.com/BachErik-Team/BanSystem/tree/master) can you find [here](https://docs.bacherik.eu/bansystem/how-to-update/v0.1.0-to-master).
 
 ## Coming Soon
 - Ban, mute, and (warn) bypass

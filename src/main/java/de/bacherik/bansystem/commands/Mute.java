@@ -17,13 +17,13 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Mute extends Command {
+    private final MessagesConfig config = Main.getInstance().getMessagesConfig();
     public Mute(String name, String permission, String... aliases) {
         super(name, permission, aliases);
     }
 
     @Override
     public void execute(CommandSender sender, String[] args) {
-        MessagesConfig config = Main.getInstance().getMessagesConfig();
 
         if (args.length == 0 || (args.length == 1 && args[0].equalsIgnoreCase("help"))) {
             sender.sendMessage(new TextComponent(config.get("bansystem.help")));
@@ -36,6 +36,7 @@ public class Mute extends Command {
         }
 
         String playerName = args[0];
+        ProxiedPlayer player = ProxyServer.getInstance().getPlayer(playerName);
 
         //get uuid async
         UUIDFetcher.getUUID(playerName, uuid -> {
@@ -78,10 +79,10 @@ public class Mute extends Command {
 
                         if (sender instanceof ProxiedPlayer) {
                             UUIDFetcher.getUUID(sender.getName(), mutedByUuid -> mute(playerName, uuid.toString(),
-                                    sender.getName(), mutedByUuid.toString(), muteTemplate.getReason(), start, end));
+                                    sender.getName(), mutedByUuid.toString(), muteTemplate.getReason(), start, end, player, sender));
                         } else {
                             mute(playerName, uuid.toString(), config.get("bansystem.consolename"),
-                                    config.get("bansystem.consolename"), muteTemplate.getReason(), start, end);
+                                    config.get("bansystem.consolename"), muteTemplate.getReason(), start, end, player, sender);
                         }
                     });
                     return;
@@ -119,17 +120,21 @@ public class Mute extends Command {
                 if (sender instanceof ProxiedPlayer) {
                     LocalDateTime finalEnd = end;
                     UUIDFetcher.getUUID(sender.getName(), mutedByUuid -> mute(playerName, uuid.toString(),
-                            sender.getName(), mutedByUuid.toString(), reason, start, finalEnd));
+                            sender.getName(), mutedByUuid.toString(), reason, start, finalEnd, player, sender));
                 } else {
                     mute(playerName, uuid.toString(), config.get("bansystem.consolename"),
-                            config.get("bansystem.consolename"), reason, start, end);
+                            config.get("bansystem.consolename"), reason, start, end, player, sender);
                 }
             });
         });
     }
 
     private void mute(String playerName, String playerUuid, String mutedByName,
-                      String mutedByUuid, String reason, LocalDateTime start, LocalDateTime end) {
+                      String mutedByUuid, String reason, LocalDateTime start, LocalDateTime end, ProxiedPlayer player, CommandSender sender) {
+        if (player.hasPermission("bansystem.mute.bypass")) {
+            sender.sendMessage(new TextComponent(config.get("bansystem.mute.bypass", true).replaceAll("%PLAYER%", playerName)));
+            return;
+        }
         MessagesConfig config = Main.getInstance().getMessagesConfig();
 
         Main.getInstance().getSql().muteAsync(playerUuid, mutedByUuid, reason, start, end);

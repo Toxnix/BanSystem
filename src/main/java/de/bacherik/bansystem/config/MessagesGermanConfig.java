@@ -50,6 +50,8 @@ public class MessagesGermanConfig extends MessagesConfig {
         messages.put("bansystem.unban.syntax", "&cSyntax: /unban <Spieler> [<Grund>]");
         messages.put("bansystem.unmute.syntax", "&cSyntax: /unmute <Spieler> [<Grund>]");
         messages.put("bansystem.mute.nopermission", "&cDu hast nicht die Berechtigung, um den Spieler for die angegebene Zeit zu mute!");
+        messages.put("bansystem.ban.bypass", "&cDer Spieler: &e%PLAYER% &ckann nicht gebannt werden, weil er den Bann umgangen hat!");
+        messages.put("bansystem.mute.bypass", "&cDer Spieler: &e%PLAYER% &ckann nicht gemuted werden, weil er den Mute umgangen hat!");
         messages.put("bansystem.unban.notbanned", "&cSpieler &e%PLAYER% &cist nicht gebannt.");
         messages.put("bansystem.unmute.notmuted", "&cSpieler &e%PLAYER% &cist nicht gemuted.");
         messages.put("bansystem.unban.successful", "&7Spieler &e%PLAYER% &7wurde von &e%UNBANNED_BY% &7entbannt" +

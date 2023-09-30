@@ -48,6 +48,8 @@ public class MessagesEnglishConfig extends MessagesConfig {
                         "&7Reason: &c%REASON%\n" +
                         "&7Time: &c%TIME%");
         messages.put("bansystem.ban.nopermission", "&cYou do not have permission to ban the player for the specified time!");
+        messages.put("bansystem.ban.bypass", "&cThe player: &e%PLAYER% &ccan not be banned because he has bypassed the ban!");
+        messages.put("bansystem.mute.bypass", "&cThe player: &e%PLAYER% &ccan not be muted because he has bypassed the mute!");
         messages.put("bansystem.mute.nopermission", "&cYou do not have permission to mute the player for the specified time!");
         messages.put("bansystem.unban.syntax", "&cSyntax: /unban <Player> [<Reason>]");
         messages.put("bansystem.unmute.syntax", "&cSyntax: /unmute <Player> [<Reason>]");

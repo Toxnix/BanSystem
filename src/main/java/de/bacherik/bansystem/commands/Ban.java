@@ -17,13 +17,13 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Ban extends Command {
+    private final MessagesConfig config = Main.getInstance().getMessagesConfig();
     public Ban(String name, String permission, String... aliases) {
         super(name, permission, aliases);
     }
 
     @Override
     public void execute(CommandSender sender, String[] args) {
-        MessagesConfig config = Main.getInstance().getMessagesConfig();
 
         if (args.length == 0 || (args.length == 1 && args[0].equalsIgnoreCase("help"))) {
             sender.sendMessage(new TextComponent(config.get("bansystem.help")));
@@ -36,6 +36,7 @@ public class Ban extends Command {
         }
 
         String playerName = args[0];
+        ProxiedPlayer player = ProxyServer.getInstance().getPlayer(playerName);
 
         //get uuid async
         UUIDFetcher.getUUID(playerName, uuid -> {
@@ -78,10 +79,10 @@ public class Ban extends Command {
 
                         if (sender instanceof ProxiedPlayer) {
                             UUIDFetcher.getUUID(sender.getName(), bannedByUuid -> ban(playerName, uuid.toString(),
-                                    sender.getName(), bannedByUuid.toString(), banTemplate.getReason(), start, end));
+                                    sender.getName(), bannedByUuid.toString(), banTemplate.getReason(), start, end, player, sender));
                         } else {
                             ban(playerName, uuid.toString(), config.get("bansystem.consolename"),
-                                    config.get("bansystem.consolename"), banTemplate.getReason(), start, end);
+                                    config.get("bansystem.consolename"), banTemplate.getReason(), start, end, player, sender);
                         }
                     });
                     return;
@@ -119,17 +120,21 @@ public class Ban extends Command {
                 if (sender instanceof ProxiedPlayer) {
                     LocalDateTime finalEnd = end;
                     UUIDFetcher.getUUID(sender.getName(), bannedByUuid -> ban(playerName, uuid.toString(),
-                            sender.getName(), bannedByUuid.toString(), reason, start, finalEnd));
+                            sender.getName(), bannedByUuid.toString(), reason, start, finalEnd, player, sender));
                 } else {
                     ban(playerName, uuid.toString(), config.get("bansystem.consolename"),
-                            config.get("bansystem.consolename"), reason, start, end);
+                            config.get("bansystem.consolename"), reason, start, end, player, sender);
                 }
             });
         });
     }
 
     private void ban(String playerName, String playerUuid, String bannedByName,
-                     String bannedByUuid, String reason, LocalDateTime start, LocalDateTime end) {
+                     String bannedByUuid, String reason, LocalDateTime start, LocalDateTime end, ProxiedPlayer player, CommandSender sender) {
+        if (player.hasPermission("bansystem.ban.bypass")) {
+            sender.sendMessage(new TextComponent(config.get("bansystem.ban.bypass", true).replaceAll("%PLAYER%", player.getDisplayName())));
+            return;
+        }
         MessagesConfig config = Main.getInstance().getMessagesConfig();
 
         Main.getInstance().getSql().banAsync(playerUuid, bannedByUuid, reason, start, end);

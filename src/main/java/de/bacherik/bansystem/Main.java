@@ -36,6 +36,7 @@ public final class Main extends Plugin {
     public void onEnable() {
         // Plugin startup logic
         System.out.println(ChatColor.DARK_GREEN + PREFIX + "Plugin enabling ...");
+        instance = this;
         DBConfig dbConfig = new DBConfig("database.yml", "plugins/BanSystem");
         settingsConfig = new SettingsConfig("settings.yml", "plugins/BanSystem");
 
@@ -69,7 +70,7 @@ public final class Main extends Plugin {
         pluginManager.registerListener(this, new PreSendMessage());
 
         System.out.println(ChatColor.GREEN + PREFIX + "Plugin enabled");
-        instance = this;
+
         listen();
     }
 
