@@ -80,9 +80,8 @@ BanSystem offers several compelling reasons to use it on your BungeeCord server:
 - [v0.1.0](https://github.com/BachErik-Team/BanSystem/releases/tag/v0.1.0) to [master](https://github.com/BachErik-Team/BanSystem/tree/master) can you find [here](https://docs.bacherik.eu/bansystem/how-to-update/v0.1.0-to-master).
 
 ## Coming Soon
-- Ban, mute, and (warn) bypass
-- Add H2 and MongoDB Database support
 - If you are muted, commands that you don't able to use
+- Add H2 and MongoDB Database support
 - General history command to show all mutes, bans, and warns
 - A warn System
 - Spigot support
