@@ -1,3 +1,4 @@
+![DALL·E 2023-11-12 00 20 21 - Create a banner for a Minecraft ban system in a 3_1 format  The banner should feature a stylized banhammer, striking an anvil with sparks flying  The ](https://github.com/BachErik-Team/BanSystem/assets/75324423/39e3582e-44b4-4bf2-974e-31a20ba8e43d)
 # BanSystem
 This plugin allows you to ban players. I am currently actively developing the plugin and have many ideas and features in progress.
 
