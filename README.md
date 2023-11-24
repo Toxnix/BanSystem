@@ -1,4 +1,8 @@
-![DALL·E 2023-11-12 00 20 21 - Create a banner for a Minecraft ban system in a 3_1 format  The banner should feature a stylized banhammer, striking an anvil with sparks flying  The ](https://github.com/BachErik-Team/BanSystem/assets/75324423/39e3582e-44b4-4bf2-974e-31a20ba8e43d)
+
+![banner](https://github.com/Toxnix/BanSystem/assets/75324423/e821d78a-2945-4764-8718-5938621beb88)
+
+
+
 # BanSystem
 This plugin allows you to ban players. I am currently actively developing the plugin and have many ideas and features in progress.
 
@@ -78,8 +82,8 @@ BanSystem offers several compelling reasons to use it on your BungeeCord server:
 5. If needed, adjust the ban duration settings for different groups in the `settings.yml`.
 
 ## How to Update
-- [v0.1.0](https://github.com/BachErik-Team/BanSystem/releases/tag/v0.1.0) to [v0.2.0](https://github.com/BachErik-Team/BanSystem/releases/tag/v0.2.0) can you find [here](https://docs.bacherik.eu/bansystem/how-to-update/v0.1.0-to-v0.2.0).
-- [v0.2.0](https://github.com/BachErik-Team/BanSystem/releases/tag/v0.2.0) to [master](https://github.com/BachErik-Team/BanSystem/tree/master) can you find [here](https://docs.bacherik.eu/bansystem/how-to-update/v0.2.0-to-master).
+- [v0.1.0](https://github.com/Toxnix/BanSystem/releases/tag/v0.1.0) to [v0.2.0](https://github.com/Toxnix/BanSystem/releases/tag/v0.2.0) can you find [here](https://docs.bacherik.eu/bansystem/how-to-update/v0.1.0-to-v0.2.0).
+- [v0.2.0](https://github.com/Toxnix/BanSystem/releases/tag/v0.2.0) to [master](https://github.com/Toxnix/BanSystem/tree/master) can you find [here](https://docs.bacherik.eu/bansystem/how-to-update/v0.2.0-to-master).
 
 ## Coming Soon
 - If you are muted, commands that you don't able to use
