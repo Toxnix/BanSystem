@@ -15,21 +15,23 @@ public class PreSendMessage implements Listener {
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onMessage(ChatEvent event) {
         if (event.isCancelled()) {
-            return; // ignore already canceled messages
+            return; // ignore already cancelled messages
         }
 
         if (event.getSender() instanceof ProxiedPlayer) {
             ProxiedPlayer player = (ProxiedPlayer) event.getSender();
+            String message = event.getMessage();
 
-            // Check if the player sending the message has a mute record
-            MuteRecord record = Main.getInstance().getSql().getMute(player.getUniqueId().toString());
-
-            if (record != null) { // If the player is muted
-                event.setCancelled(true); // Cancel the chat message event
-                player.sendMessage(new TextComponent(Main.getInstance().getMessagesConfig().get("bansystem.mutemessage")
-                        .replaceAll("%REASON%", record.getReason())
-                        .replaceAll("%REMAINING_TIME%", record.getRemaining())));
+            if (player.hasPermission("bansystem.mute.bypass")) {
+                return;
             }
+            MuteRecord record = Main.getInstance().getSql().getMute(player.getUniqueId().toString());
+            if (record == null) return;
+
+            event.setCancelled(true);
+            player.sendMessage(new TextComponent(Main.getInstance().getMessagesConfig().get("bansystem.mutemessage")
+                    .replaceAll("%REASON%", record.getReason())
+                    .replaceAll("%REMAINING_TIME%", record.getRemaining())));
         }
     }
 }
